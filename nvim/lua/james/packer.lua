@@ -42,6 +42,8 @@ return require('packer').startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
 
+  use ("windwp/nvim-ts-autotag") -- Auto tag for jsx in my case
+
   -- IDE
   use {
         'nvim-treesitter/nvim-treesitter',
@@ -63,5 +65,12 @@ return require('packer').startup(function(use)
 
   -- JS colors
   use 'norcalli/nvim-colorizer.lua'
+  -- JS code formatter: Prettier and null-ls
+  use("nvim-lua/plenary.nvim")
+  use("jose-elias-alvarez/null-ls.nvim")
+  use("MunifTanjim/prettier.nvim")
+
+  use "lewis6991/gitsigns.nvim" -- Git Sign at left-most column
+
 end)
 

@@ -111,7 +111,29 @@ end
 
 -- require("lspconfig").zls.setup(config()) -- Zig language server
 
-require("lspconfig").tsserver.setup(config()) -- TS server
+local on_attach = function(client, bufnr)
+    -- format on save 
+    if client.server_capabilities.documentFormattingProvider then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("Format", {clear = true}),
+            buffer = bufnr,
+            callback =function () vim.lsp.buf.formatting_seq_sync() end
+        })
+    end
+end
+require("lspconfig").tsserver.setup {
+    on_attach = on_attach;
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    cmd = { "typescript-language-server", "--stdio" }
+}-- TS server
+
+require('nvim-ts-autotag').setup() -- TS auto complete tag
+
+--[[
+require('nvim-autopairs').setup({
+    disable_filetype = { "TelescopePrompt" , "vim" },
+})
+--]] -- messed up auto pairs
 
 require("lspconfig").ccls.setup(config())
 
@@ -119,7 +141,6 @@ require("lspconfig").html.setup {
     capabilities = capabilities,
 }
 
---require("lspconfig").jedi_language_server.setup(config())
 require("lspconfig").jedi_language_server.setup(config({
   init_options = {
     compilationDatabaseDirectory = "build";
@@ -176,5 +197,4 @@ local opts = {
 }
 
 require("symbols-outline").setup(opts)
-
 
