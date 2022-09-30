@@ -130,4 +130,4 @@ git config --global core.excludesfile ~/.gitignore_global
 alias bs='browser-sync start --server --directory --files "*"'
 
 # Replace default dust -> Show all files/dirs size in current directory
-alias du='dust -d 1'
+alias duu='dust -d 1'
