@@ -23,7 +23,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.wrap = true -- Also different
+vim.opt.wrap = false -- Also different
 
 vim.g.mapleader = " " -- Set <leader> key
 
