@@ -58,7 +58,6 @@ cmp.setup({
 		-- tabnine completion? yayaya
 
 		{ name = "cmp_tabnine" },
-
 		{ name = "nvim_lsp" },
         { name = 'nvim_lsp_signature_help'},
         { name = 'nvim_lua', keyword_length = 2},
@@ -122,12 +121,14 @@ local on_attach = function(client, bufnr)
         })
     end
 end
+--[[ Takuya's config
 require("lspconfig").tsserver.setup {
     on_attach = on_attach;
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" }
 }-- TS server
-
+--]]
+require("lspconfig").tsserver.setup(config()) -- ThePrimeagen's config
 require('nvim-ts-autotag').setup() -- TS auto complete tag
 
 --[[
@@ -138,9 +139,11 @@ require('nvim-autopairs').setup({
 
 require("lspconfig").ccls.setup(config())
 
+--[[ omit this to see if tsserver lsp works also
 require("lspconfig").html.setup {
     capabilities = capabilities,
 }
+--]] 
 
 require("lspconfig").jedi_language_server.setup(config({
   init_options = {
