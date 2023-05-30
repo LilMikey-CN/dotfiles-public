@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
 		  -- Snippets
 		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
+
 	  }
   }
 
@@ -61,6 +62,15 @@ return require('packer').startup(function(use)
 		  vim.cmd('colorscheme tokyonight')
 	  end
   })
+
+  use {
+      "windwp/nvim-autopairs",
+      config = function ()
+        require("nvim-autopairs").setup {}
+      end
+  }
+
+  use("github/copilot.vim")
 
 end)
 
