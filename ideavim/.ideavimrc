@@ -1,0 +1,94 @@
+" Set leader key
+let mapleader = " "
+
+" Open file explorer with <leader>pv
+"nnoremap <leader>pv :Ex<CR>
+
+" vim-tmux-navigator bindings
+"nnoremap <C-h> :TmuxNavigateLeft<CR>
+"nnoremap <C-l> :TmuxNavigateRight<CR>
+"nnoremap <C-j> :TmuxNavigateDown<CR>
+"nnoremap <C-k> :TmuxNavigateUp<CR>
+
+" Exit insert mode with 'jj'
+inoremap jj <ESC>
+
+" Move highlighted lines up and down
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Append the next line to the current line without moving the cursor
+nnoremap J mzJ`z
+
+" Scroll half page up and down, keeping cursor centered
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" Find next and previous search result, center screen and select match
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Override default paste to keep the yanked text in the register
+xnoremap <leader>p "dP
+
+" Yank to system clipboard (use "+y/Y)
+nnoremap y "+y
+vnoremap y "+y
+nnoremap Y "+Y
+
+" Disable Q
+nnoremap Q <nop>
+
+" Substitution globally to the word that cursor is on
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+
+" Make bash executable
+"nnoremap <leader>x :!chmod +x %<CR>
+
+" Golang specific mapping
+nnoremap <leader>ee oif err != nil {<CR>}<ESC>Oreturn err<ESC>
+
+
+
+" Disable GUI cursor
+set guicursor=
+
+" Line numbering
+set nu
+set relativenumber
+
+" Tab and indentation settings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" Enable smart indentation
+set smartindent
+
+" Disable line wrapping
+set nowrap
+
+" Disable swapfile and backup, setup undo directory
+set noswapfile
+set nobackup
+set undodir=$HOME/.vim/undodir
+set undofile
+
+" Search settings
+set nohlsearch
+set incsearch
+
+" Enable true color support
+set termguicolors
+
+" Scrolling and column settings
+set scrolloff=8
+set signcolumn=yes
+
+" Reduce update time
+set updatetime=50
+
+" Highlight column at the 80th character
+set colorcolumn=80
+
