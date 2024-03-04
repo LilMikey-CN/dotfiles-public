@@ -81,5 +81,8 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
+  -- code snippets
+  use("michaelrommel/nvim-silicon")
+
 end)
 

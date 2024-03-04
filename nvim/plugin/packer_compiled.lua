@@ -155,6 +155,11 @@ _G.packer_plugins = {
     path = "/Users/jxk/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-silicon"] = {
+    loaded = true,
+    path = "/Users/jxk/.local/share/nvim/site/pack/packer/start/nvim-silicon",
+    url = "https://github.com/michaelrommel/nvim-silicon"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/jxk/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
