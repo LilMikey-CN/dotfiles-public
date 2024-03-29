@@ -84,5 +84,12 @@ return require('packer').startup(function(use)
   -- code snippets
   use("michaelrommel/nvim-silicon")
 
+  use "nvim-lua/plenary.nvim"
+  use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  }
+
 end)
 
