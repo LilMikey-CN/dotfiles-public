@@ -6,12 +6,14 @@ require'nvim-treesitter.configs'.setup {
     "html",
     "json",
     "javascript",
-    --  "typescript",
+    "typescript",
     "c",
     "lua",
     "rust",
     "xml",
-    "go"
+    "go",
+    "gitignore",
+    "sql",
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
