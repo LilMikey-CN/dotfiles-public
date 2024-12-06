@@ -34,6 +34,9 @@ vim.keymap.set("n", "y", "\"+y")
 vim.keymap.set("v", "y", "\"+y")
 vim.keymap.set("n", "Y", "\"+Y")
 
+-- vertical edit with C-c doesn't change the remaining lines, only with <ESC> would
+vim.keymap.set("i", "<C-c>", "<ESC>")
+
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Substitution globally to the word that cursor is on 
