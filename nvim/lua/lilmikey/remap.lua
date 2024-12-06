@@ -1,14 +1,13 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
--- vim.keymap.set("n", "<Tab>", "<Nop>")
-
 -- vim-tmux-navigator
 vim.keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
 vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
 vim.keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
 
+-- I like this for going back to NORMAL mode
 vim.keymap.set("i", "jj", "<ESC>")
 
 -- Move highlighted lines up and down to squeeze between lines
@@ -36,7 +35,7 @@ vim.keymap.set("n", "Y", "\"+Y")
 
 vim.keymap.set("n", "Q", "<nop>")
 
--- Substitution globally to the word that cursor is on 
+-- Substitution globally to the word that cursor is on
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- make bash executable
