@@ -1,13 +1,17 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- vim.keymap.set("n", "<Tab>", "<Nop>")
 
 -- vim-tmux-navigator
-vim.keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
-vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
-vim.keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
-vim.keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
+-- vim.keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
+-- vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
+-- vim.keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
+-- vim.keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
 
 vim.keymap.set("i", "jj", "<ESC>")
 
@@ -27,27 +31,23 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Save the copied content in the register rather than the deleted one
-vim.keymap.set("x", "<leader>p", "\"dP")
+vim.keymap.set("x", "<leader>p", '"dP')
 
 -- yank and use it outside nvim (Should be <leader>y/Y but I'll just use y/Y)
-vim.keymap.set("n", "y", "\"+y")
-vim.keymap.set("v", "y", "\"+y")
-vim.keymap.set("n", "Y", "\"+Y")
+vim.keymap.set("n", "y", '"+y')
+vim.keymap.set("v", "y", '"+y')
+vim.keymap.set("n", "Y", '"+Y')
 
 -- vertical edit with C-c doesn't change the remaining lines, only with <ESC> would
 vim.keymap.set("i", "<C-c>", "<ESC>")
 
 vim.keymap.set("n", "Q", "<nop>")
 
--- Substitution globally to the word that cursor is on 
+-- Substitution globally to the word that cursor is on
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- make bash executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- For Golang
-vim.keymap.set(
-  "n",
-  "<leader>ee",
-  "oif err != nil {<CR>}<ESC>Oreturn err<ESC>"
-)
+vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<ESC>Oreturn err<ESC>")
