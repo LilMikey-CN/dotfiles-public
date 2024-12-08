@@ -43,13 +43,14 @@ return {
   },
 
   -- animations
-  {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      opts.scroll = {
-        enable = false,
-      }
-    end,
-  },
+  -- meh, don't really like it as devaslife
+  --   {
+  --     "echasnovski/mini.animate",
+  --     event = "VeryLazy",
+  --     opts = function(_, opts)
+  --       opts.scroll = {
+  --         enable = false,
+  --       }
+  --     end,
+  --   },
 }
