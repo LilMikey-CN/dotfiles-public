@@ -1,3 +1,4 @@
+-- Enable navigation beteen tmux panes while inside nvim
 return {
   "christoomey/vim-tmux-navigator",
   lazy = false,

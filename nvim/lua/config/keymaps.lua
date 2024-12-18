@@ -31,7 +31,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Save the copied content in the register rather than the deleted one
-vim.keymap.set("x", "<leader>p", '"dP')
+vim.keymap.set("x", "p", [["_dP]])
 
 -- yank and use it outside nvim (Should be <leader>y/Y but I'll just use y/Y)
 vim.keymap.set("n", "y", '"+y')
@@ -51,3 +51,8 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- For Golang
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<ESC>Oreturn err<ESC>")
+
+-- LazyVim specific keymaps
+-- -- Delete operations skip the system clipboard and use nvim internal register
+-- vim.keymap.set("n", "d", '"_d', { noremap = true })
+-- vim.keymap.set("v", "d", '"_d', { noremap = true })
